@@ -3,28 +3,20 @@ import { addContact, fetchContacts, deleteContact } from './thunks';
 import { handleFulfilled } from './hendlers';
 
 const initialState = {
-  favorite: {
+  favorites: {
     items: [],
   },
 };
 
 const favoriteSlice = createSlice({
-  name: 'contacts',
+  name: 'favorites',
   initialState: initialState,
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
-        state.contacts.items = payload;
+        state.favorites.items =
+          JSON.parse(localStorage.getItem('favorites')) ?? [];
       })
-      .addCase(addContact.fulfilled, (state, { payload }) => {
-        state.contacts.items.push(payload);
-      })
-      .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        state.contacts.items = state.contacts.items.filter(
-          contact => contact.id !== payload.id
-        );
-      })
-
       .addMatcher(
         action => action.type.endsWith('/fulfilled'),
         handleFulfilled

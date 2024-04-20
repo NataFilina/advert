@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { favoriteReducer } from './favoriteSlice';
+import { carsReducer } from './carsSlice';
 import {
   persistStore,
   persistReducer,
@@ -22,6 +23,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, favoriteReducer);
 
 const reducer = {
+  cars: carsReducer,
   favorite: persistedReducer,
   root: rootSliceReducer,
 };
