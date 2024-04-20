@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/thunks';
 import { selectorItems } from '../../redux/selectors';
 
-export const ContactForm = () => {
+export const LocationForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const items = useSelector(selectorItems);

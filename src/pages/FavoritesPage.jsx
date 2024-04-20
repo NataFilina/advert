@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { loginUserThunk } from '../redux/thunks';
 import { FormLogin } from 'components/FormLogin/FormLogin';
 
-const LoginPage = () => {
+const FavoritesPage = () => {
   const dispatch = useDispatch();
 
   const login = data => {
@@ -16,4 +16,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default FavoritesPage;
