@@ -54,6 +54,9 @@
   width: 24px;
   height: 24px;
   background-image: url('../../images/heart.svg');
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .itemWrapperRating {
   display: flex;

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectorCar } from '../../redux/selectors';
 import css from './CarInfo.module.css';
 
-export const CarInfo = () => {
+const CarInfo = async () => {
   const car = useSelector(selectorCar);
 
   return (
@@ -49,3 +49,5 @@ export const CarInfo = () => {
     </div>
   );
 };
+
+export default CarInfo;

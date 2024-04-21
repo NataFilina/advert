@@ -1,4 +1,4 @@
-import { CarInfo } from '../CarInfo/CarInfo';
+import CarInfo from '../CarInfo/CarInfo';
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './CarDetails.module.css';
@@ -7,7 +7,6 @@ const CarDetails = () => {
   return (
     <div className={css.wrapper}>
       <CarInfo />
-
       <div className={css.wrapperLink}>
         <NavLink className={css.navLink} to="features">
           Features
@@ -16,7 +15,6 @@ const CarDetails = () => {
           Reviews
         </NavLink>
       </div>
-
       <div className={css.line}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ const initialState = {
   cars: {
     items: [],
   },
-  car: [],
+  car: '',
   isShowModal: false,
 };
 

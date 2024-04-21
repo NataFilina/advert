@@ -1,21 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './CarsList.module.css';
 import { DescriptionDetails } from '../DescriptionDetails/DescriptionDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectorItems } from '../../redux/selectors';
 import { fetchCar } from '../../redux/thunks';
 import { NavLink } from 'react-router-dom';
+import heart from '../../images/heart.svg';
+import redHeart from '../../images/redHeart.svg';
+import { addFavoriteAction } from '../../redux/favoriteSlice';
 
 const CarList = () => {
   const cars = useSelector(selectorItems);
-  console.log(cars);
   const dispatch = useDispatch();
+  const [carId, setCarId] = useState([]);
 
   const oInfo = async id => {
     await dispatch(fetchCar(id));
   };
 
+  const onChange = id => {
+    setCarId(id);
+  };
+
   const newCar = cars.map(car => {
+    const toFavorite = id => {
+      if (id === carId) {
+        dispatch(addFavoriteAction(car));
+        alert('We added this car to Favorites');
+
+        return `url(${redHeart})`;
+      }
+      return `url(${heart})`;
+    };
+
     return (
       <li key={car._id} className={css.item}>
         <img className={css.img} src={car.gallery[0]} alt="" width="290" />
@@ -23,7 +40,12 @@ const CarList = () => {
           <div className={css.itemWrapperTitle}>
             <div className={css.name}>{car.name}</div>
             <div className={css.price}>
-              €{car.price}.00 <div className={css.iconHeart}></div>
+              €{car.price}.00
+              <button
+                onClick={() => onChange(car._id)}
+                className={css.iconHeart}
+                style={{ backgroundImage: toFavorite(car._id) }}
+              ></button>
             </div>
           </div>
           <div className={css.itemWrapperRating}>

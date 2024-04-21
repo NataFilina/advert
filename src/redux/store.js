@@ -15,9 +15,9 @@ import storage from 'redux-persist/lib/storage';
 import { rootSliceReducer } from './slice';
 
 const persistConfig = {
-  key: 'favorite',
+  key: 'favorites',
   storage,
-  whitelist: ['favorite'],
+  whitelist: ['favorites'],
 };
 
 const persistedReducer = persistReducer(persistConfig, favoriteReducer);
