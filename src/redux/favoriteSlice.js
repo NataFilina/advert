@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addContact, fetchContacts, deleteContact } from './thunks';
-import { handleFulfilled } from './hendlers';
 
 const initialState = {
   favorites: {
@@ -11,17 +9,14 @@ const initialState = {
 const favoriteSlice = createSlice({
   name: 'favorites',
   initialState: initialState,
-  extraReducers: builder => {
-    builder
-      .addCase(fetchContacts.fulfilled, (state, { payload }) => {
-        state.favorites.items =
-          JSON.parse(localStorage.getItem('favorites')) ?? [];
-      })
-      .addMatcher(
-        action => action.type.endsWith('/fulfilled'),
-        handleFulfilled
-      );
+  reducers: {
+    addFavorite: {
+      reducer: (state, { payload }) => {
+        state.favorites.items.push(payload);
+      },
+    },
   },
 });
 
 export const favoriteReducer = favoriteSlice.reducer;
+export const { addFavorite } = favoriteSlice.actions;

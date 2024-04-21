@@ -1,0 +1,131 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  display: flex;
+  padding: 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+
+  background: #fff;
+}
+.img {
+  border-radius: 10px;
+}
+.itemWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.itemWrapperTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.name {
+  color: #101828;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+}
+.price {
+  color: #101828;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+}
+.iconHeart {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../images/heart.svg');
+}
+.itemWrapperRating {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: start;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  color: #101828;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-decoration-line: underline;
+}
+.iconStar {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../images/star.svg');
+}
+.location {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+.iconLocation {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../images/map.svg');
+}
+.description {
+  overflow: hidden;
+  color: #475467;
+
+  text-overflow: ellipsis;
+  /* Main text */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  display: -webkit-box;
+  width: 525px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.btn {
+  display: flex;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  background: #e44848;
+  color: #fff;
+  width: 166px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.08px;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover {
+  background: #d84343;
+}

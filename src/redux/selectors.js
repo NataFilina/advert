@@ -1,4 +1,4 @@
-export const selectorItems = state => state.contacts.contacts.items;
-export const selectorFilter = state => state.filter.filter;
+export const selectorItems = state => state.cars.cars.items;
+export const selectorFavorites = state => state.favorites.favorites;
 export const selectorGlobalLoading = state => state.root.isLoading;
 export const selectorGlobalError = state => state.root.error;
