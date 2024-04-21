@@ -6,6 +6,7 @@ const initialState = {
   cars: {
     items: [],
   },
+  car: [],
 };
 
 const carsSlice = createSlice({
@@ -17,9 +18,7 @@ const carsSlice = createSlice({
         state.cars.items = payload;
       })
       .addCase(fetchCar.fulfilled, (state, { payload }) => {
-        state.cars.items = state.cars.items.filter(
-          car => car.id !== payload.id
-        );
+        state.car = payload;
       })
       .addMatcher(
         action => action.type.endsWith('/fulfilled'),

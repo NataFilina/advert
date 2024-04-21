@@ -1,9 +1,19 @@
 import React from 'react';
 import css from './CarsList.module.css';
 import { Details } from 'components/Details/Details';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectorItems } from '../../redux/selectors';
+import { fetchCar } from '../../redux/thunks';
 
-const CarList = ({ cars }) => {
-  console.log(cars);
+const CarList = () => {
+  const cars = useSelector(selectorItems);
+
+  const dispatch = useDispatch();
+
+  const oInfo = id => {
+    dispatch(fetchCar(id));
+  };
+
   const newContact = cars.map(car => {
     return (
       <>
@@ -34,7 +44,7 @@ const CarList = ({ cars }) => {
             <button
               className={css.btn}
               type="button"
-              // onClick={() => onDelete(id)}
+              onClick={() => oInfo(car._id)}
             >
               Show more
             </button>
