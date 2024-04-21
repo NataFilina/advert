@@ -115,7 +115,7 @@
   gap: 10px;
   border-radius: 200px;
   background: #e44848;
-
+  width: 166px;
   cursor: pointer;
   border: none;
 }
@@ -124,7 +124,7 @@
 }
 .btnLink {
   color: #fff;
-  width: 166px;
+
   font-family: Inter;
   font-size: 16px;
   font-style: normal;

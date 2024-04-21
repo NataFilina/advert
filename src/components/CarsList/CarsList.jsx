@@ -12,15 +12,11 @@ const CarList = () => {
   const cars = useSelector(selectorItems);
   console.log(cars);
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(false);
 
   const oInfo = id => {
     dispatch(fetchCar(id));
-    setShowModal(true);
   };
-  const onCloseModal = () => {
-    setShowModal(false);
-  };
+
   const newCar = cars.map(car => {
     return (
       <li key={car._id} className={css.item}>
@@ -63,11 +59,7 @@ const CarList = () => {
 
   return (
     <>
-      {' '}
       <ul className={css.list}>{newCar}</ul>
-      {showModal && (
-        <CarDetails modalIsOpen={showModal} closeModal={onCloseModal} />
-      )}
     </>
   );
 };
