@@ -8,6 +8,6 @@ export const getCarsList = async () => {
 };
 
 export const getCar = async id => {
-  const result = await axios.delete(`/adverts/${id}`);
+  const result = await axios.get(`/adverts/${id}`);
   return result.data;
 };

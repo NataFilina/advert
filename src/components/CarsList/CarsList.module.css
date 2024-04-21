@@ -115,6 +115,14 @@
   gap: 10px;
   border-radius: 200px;
   background: #e44848;
+
+  cursor: pointer;
+  border: none;
+}
+.btn:hover {
+  background: #d84343;
+}
+.btnLink {
   color: #fff;
   width: 166px;
   font-family: Inter;
@@ -123,9 +131,5 @@
   font-weight: 500;
   line-height: 24px; /* 150% */
   letter-spacing: -0.08px;
-  cursor: pointer;
-  border: none;
-}
-.btn:hover {
-  background: #d84343;
+  text-decoration: none;
 }

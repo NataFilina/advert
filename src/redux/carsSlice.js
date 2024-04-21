@@ -7,6 +7,7 @@ const initialState = {
     items: [],
   },
   car: [],
+  isShowModal: false,
 };
 
 const carsSlice = createSlice({
@@ -18,6 +19,7 @@ const carsSlice = createSlice({
         state.cars.items = payload;
       })
       .addCase(fetchCar.fulfilled, (state, { payload }) => {
+        state.isShowModal = true;
         state.car = payload;
       })
       .addMatcher(
