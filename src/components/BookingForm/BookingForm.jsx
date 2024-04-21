@@ -1,13 +1,12 @@
-import css from './FormRegistration.module.css';
-import { NavLink } from 'react-router-dom';
+import css from './BookingForm.module.css';
 
 export const BookingForm = () => {
   return (
-    <>
-      <NavLink className={css.btnHome} to="/">
-        Back to home
-      </NavLink>
-
+    <div className={css.wrapper}>
+      <div className={css.title}>Book your campervan now</div>
+      <div className={css.subtitle}>
+        Stay connected! We are always ready to help you.
+      </div>
       <form className={css.form}>
         <input
           className={css.input}
@@ -25,16 +24,20 @@ export const BookingForm = () => {
         ></input>
         <input
           className={css.input}
-          placeholder="Booking date"
-          type="date"
+          type="text"
           name="date"
+          placeholder="Booking date"
           required
         ></input>
-        <textarea name="message" placeholder="Comment"></textarea>
+        <textarea
+          className={css.textarea}
+          name="message"
+          placeholder="Comment"
+        ></textarea>
         <button className={css.btn} type="submit">
           Send
         </button>
       </form>
-    </>
+    </div>
   );
 };

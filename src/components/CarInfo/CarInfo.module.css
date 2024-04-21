@@ -39,6 +39,8 @@
 .rating {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
   color: #101828;
 
@@ -57,6 +59,8 @@
 .location {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
   color: #101828;
 
@@ -84,6 +88,7 @@
 }
 .img {
   border-radius: 10px;
+  width: 290px;
 }
 .description {
   color: var(--Gray-600, #475467);

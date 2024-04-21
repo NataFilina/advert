@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import css from './CarsList.module.css';
 import { DescriptionDetails } from '../DescriptionDetails/DescriptionDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectorItems } from '../../redux/selectors';
 import { fetchCar } from '../../redux/thunks';
-import CarDetails from 'components/CarDetails/CarDetails';
 import { NavLink } from 'react-router-dom';
 
 const CarList = () => {
@@ -13,8 +11,8 @@ const CarList = () => {
   console.log(cars);
   const dispatch = useDispatch();
 
-  const oInfo = id => {
-    dispatch(fetchCar(id));
+  const oInfo = async id => {
+    await dispatch(fetchCar(id));
   };
 
   const newCar = cars.map(car => {

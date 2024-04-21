@@ -8,6 +8,17 @@ export const VehicleType = () => {
   return (
     <div>
       <h2 className={css.title}>Vehicle type</h2>
+      <div className={css.line}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="360"
+          height="2"
+          viewBox="0 0 902 2"
+          fill="none"
+        >
+          <path d="M0 1H902" stroke="#101828" stroke-opacity="0.2" />
+        </svg>
+      </div>
       <div className={css.wrapper}>
         <div className={css.card}>
           <img className={css.icon} src={van} alt="wind" />

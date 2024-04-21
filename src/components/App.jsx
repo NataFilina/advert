@@ -7,6 +7,8 @@ import { Loader } from './Loader/Loader';
 import { useDispatch } from 'react-redux';
 import { fetchCars } from '../redux/thunks';
 import CarDetails from './CarDetails/CarDetails';
+import { Features } from './Features/Features';
+import { Reviews } from './Reviews/Reviews';
 
 const SharedLayout = lazy(() => import('../components/SaredLayout'));
 const HomePage = lazy(() => import('../pages/HomePage'));
@@ -27,7 +29,10 @@ export const App = () => {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
             <Route path="catalog" element={<CatalogPage />} />
-            <Route path="details" element={<CarDetails />}></Route>
+            <Route path="details" element={<CarDetails />}>
+              <Route path="features" element={<Features />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Route>
             <Route path="favorites" element={<FavoritesPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
